@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@slack/client": "^3.8.1",
+    "dotenv": "^4.0.0"
+  },
+  "scripts": {
+    "setup": "node setup"
+  }
+}
