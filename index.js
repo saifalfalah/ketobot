@@ -17,9 +17,16 @@ rtm.on(CLIENT_EVENTS.RTM.AUTHENTICATED, function (rtmStartData) {
 rtm.start();
 
 rtm.on(RTM_EVENTS.TEAM_JOIN, function(user) {
-    request.post({url:'https://slack.com/api/im.open', form: {token:bot_token, user: user.user.id}}, function(err,httpResponse,body){
+    // console.log(user);
+    request.post({url:'https://slack.com/api/im.open', form: {token:bot_token, user: user.user.id}}, function(err, httpResponse, body) {
         if (err) throw err;
-        var json = JSON.parse(body);
-        rtm.sendMessage("Hello new user", json.channel.id);
+        var bodyObject = JSON.parse(body);
+        request.post({url:'https://slack.com/api/chat.postMessage', form: {token:bot_token, channel: bodyObject.channel.id, text: "Hello " + user.user.profile.first_name + ". Welcome to the Desi Keto Slack Group.", username: 'ketobot'}}, function(err, httpResponse, body) {
+            console.log(body);
+        });
+        // if (!json.already_open || json.already_open !== undefined || !json.no_op || json.no_op !== undefined) {
+        //     rtm.sendMessage("Hello " + user.user.profile.first_name + ".", json.channel.id);
+        // }
+        // rtm.sendMessage("Hello " + user.user.profile.first_name + ".", bodyObject.channel.id);
     });
 });

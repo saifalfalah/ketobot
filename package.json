@@ -5,6 +5,7 @@
     "request": "^2.81.0"
   },
   "scripts": {
-    "setup": "node setup"
+    "setup": "node setup",
+    "start": "node index"
   }
 }
