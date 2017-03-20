@@ -33,6 +33,22 @@ rtm.on(RTM_EVENTS.TEAM_JOIN, function(user) {
     });
 });
 
+rtm.on(RTM_EVENTS.HELLO, function(hello) {
+    console.log(hello);
+});
+
+rtm.on(RTM_EVENTS.MESSAGE, function(message) {
+    // console.log(message);
+    if (message.username !== "slackbot") {
+        if (message.text === "help") rtm.sendMessage("*I know the following commands:*\n*mods:* to see the list of mods\n*creator:* to see the creator of the bot.\n*code:* to see my internal code", message.channel);
+        else if (message.text === "mods") rtm.sendMessage("Mods are: @mads", message.channel);
+        else if (message.text === "creator") rtm.sendMessage("Creator is: <@U4J00A9BP|saifalfalah>", message.channel);
+        else if (message.text === "code") rtm.sendMessage("My code repository is: https://github.com/saifalfalah/ketobot", message.channel);
+        else rtm.sendMessage("Beep boop. I'm only a dumb bot 🤖. Please message the mods if you have any questions. *Type 'help' for a list of commands.*", message.channel) 
+    }
+    else console.log(message);
+});
+
 var server = http.createServer(function(req, res) {
     res.statusCode = 200;
 });
