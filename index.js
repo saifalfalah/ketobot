@@ -1,11 +1,13 @@
 require("dotenv").config();
 var request = require("request");
+var http = require("http");
 
 var RtmClient = require('@slack/client').RtmClient;
 var CLIENT_EVENTS = require('@slack/client').CLIENT_EVENTS;
 var RTM_EVENTS = require('@slack/client').RTM_EVENTS;
 
 var bot_token = process.env.SLACK_BOT_TOKEN || '';
+var PORT = process.env.PORT || 3000;
 
 var rtm = new RtmClient(bot_token);
 
@@ -14,7 +16,7 @@ rtm.on(CLIENT_EVENTS.RTM.AUTHENTICATED, function (rtmStartData) {
   console.log(`Logged in as ${rtmStartData.self.name} of team ${rtmStartData.team.name}, but not yet connected to a channel`);
 });
 
-rtm.start();
+// rtm.start();
 
 rtm.on(RTM_EVENTS.TEAM_JOIN, function(user) {
     // console.log(user);
@@ -30,3 +32,11 @@ rtm.on(RTM_EVENTS.TEAM_JOIN, function(user) {
         // rtm.sendMessage("Hello " + user.user.profile.first_name + ".", bodyObject.channel.id);
     });
 });
+
+var server = http.createServer(function(req, res) {
+    res.statusCode = 200;
+});
+
+server.listen(PORT, function() {
+    rtm.start();
+})
