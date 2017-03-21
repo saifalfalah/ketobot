@@ -38,21 +38,20 @@ rtm.on(RTM_EVENTS.HELLO, function(hello) {
 });
 
 rtm.on(RTM_EVENTS.MESSAGE, function(message) {
-    // console.log(message);
     if (message.username !== "slackbot") {
-        if (message.text === "help") rtm.sendMessage("*I know the following commands:*\n*mods:* to see the list of mods\n*creator:* to see the creator of the bot.\n*code:* to see my internal code", message.channel);
-        else if (message.text === "mods") rtm.sendMessage("Mods are: @mads", message.channel);
-        else if (message.text === "creator") rtm.sendMessage("Creator is: <@U4J00A9BP|saifalfalah>", message.channel);
-        else if (message.text === "code") rtm.sendMessage("My code repository is: https://github.com/saifalfalah/ketobot. Feel free to use my code. 🙌", message.channel);
-        else rtm.sendMessage("Beep boop. I can't understand what you're saying. I'm only a dumb bot 🤖. *Type 'help' for a list of my commands.* Please message 💌 the admins if you have any further questions. 🙌", message.channel) 
+        if (message.text.toLowerCase() === "help") rtm.sendMessage("*I know the following commands:*\n*admins:* to see the list of admins\n*creator:* to see the creator of the bot.\n*code:* to see my internal code", message.channel);
+        else if (message.text.toLowerCase() === "admins") rtm.sendMessage("The admins of Desi Keto are: @mads", message.channel);
+        else if (message.text.toLowerCase() === "creator") rtm.sendMessage("My creator is: <@U4J00A9BP|saifalfalah>", message.channel);
+        else if (message.text.toLowerCase() === "code") rtm.sendMessage("My code repository is: https://github.com/saifalfalah/ketobot. Feel free to use my code. 🙌", message.channel);
+        else rtm.sendMessage("Beep boop. I can't understand what you're saying. I'm only a dumb bot 🤖.\n\n*Type 'help' for a list of my commands.*\n\nPlease message 💌 the admins if you have any further questions. 🙌", message.channel) 
     }
-    else console.log(message);
+        else console.log(message);
 });
 
 var server = http.createServer(function(req, res) {
-    res.statusCode = 200;
+        res.statusCode = 200;
 });
 
 server.listen(PORT, function() {
     rtm.start();
-})
+});
