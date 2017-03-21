@@ -7,5 +7,26 @@
   "scripts": {
     "setup": "node setup",
     "start": "node index"
-  }
+  },
+  "name": "ketobot",
+  "description": "A Welcome Bot for the Desi Keto community. Join here: https://desi-keto-signup.herokuapp.com/",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saifalfalah/ketobot.git"
+  },
+  "keywords": [
+    "slack",
+    "bot",
+    "node",
+    "nodejs"
+  ],
+  "author": "Saif Al Falah",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saifalfalah/ketobot/issues"
+  },
+  "homepage": "https://github.com/saifalfalah/ketobot#readme"
 }
