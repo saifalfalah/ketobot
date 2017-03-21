@@ -20,7 +20,7 @@ Paste the bot API key into .env file.
 
 Run ```npm run start``` to initialize and run the ketobot.
 
-## Deployment
+## Deploying
 
 In production, ketobot has been deployed on Zeit Now.
 
@@ -32,6 +32,12 @@ Finally, deploy it to the server. Run ```now -e SLACK_BOT_TOKEN=@ketobot_token``
 
 Now CLI will upload and deploy your instance of ketobot to the server.
 
+## Deploying in Production
 
+Now deployments not in production sleep after 'some time' of inactivity. To deploy your bot so that it does not sleep, you need to create an alias.
 
+To create an alias, run ```now alias ketobot-your_custom_url.now.sh ketobot-your_team_name```
 
+In case you have forgotten your app's URL, you can get it by running ```now ls```
+
+Alias'd apps never sleep. Well almost.
