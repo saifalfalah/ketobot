@@ -2,7 +2,7 @@
 
 Ketobot is a Welcome Bot for the Desi Keto community. Join our community here: https://desi-keto-signup.herokuapp.com/
 
-##Setup
+## Setup
 
 Fork this project.
 
@@ -20,6 +20,6 @@ Paste the bot API key into .env file.
 
 Run ```npm run start``` to initialize and run the ketobot.
 
-##Deployment
+## Deployment
 
 In production, ketobot has been deployed on Zeit Now.
