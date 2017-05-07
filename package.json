@@ -2,11 +2,12 @@
   "dependencies": {
     "@slack/client": "^3.8.1",
     "dotenv": "^4.0.0",
+    "forever-monitor": "^1.7.1",
     "request": "^2.81.0"
   },
   "scripts": {
     "setup": "node setup",
-    "start": "node index"
+    "start": "node fm"
   },
   "name": "ketobot",
   "description": "A Welcome Bot for the Desi Keto community. Join here: https://desi-keto-signup.herokuapp.com/",
@@ -21,7 +22,9 @@
     "slack",
     "bot",
     "node",
-    "nodejs"
+    "nodejs",
+    "chatbot",
+    "chatbots"
   ],
   "author": "Saif Al Falah",
   "license": "MIT",
