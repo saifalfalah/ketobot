@@ -47,7 +47,7 @@ rtm.on(RTM_EVENTS.MESSAGE, function (message) {
             if (message.text.toLowerCase() === "help") rtm.sendMessage("*I know the following commands: 🚀*\n*admins:* to see the list of admins\n*creator:* to see the creator of the bot.\n*code:* to see my internal code", message.channel);
             else if (message.text.toLowerCase() === "admins") rtm.sendMessage("The admins of Desi Keto are: @mads 👩‍", message.channel);
             else if (message.text.toLowerCase() === "creator") rtm.sendMessage("My creator is: <@U4J00A9BP|saifalfalah> 👨🏻‍💻.\n\nIf you have any questions about this bot, don't hesitate to DM him 🙌🏿.", message.channel);
-            else if (message.text.toLowerCase() === "code") rtm.sendMessage("My code repository is: https://github.com/saifalfalah/ketobot.\n\nMy code is licensed under the MIT license. Feel free to fork my code. 🙌", message.channel);
+            else if (message.text.toLowerCase() === "code") rtm.sendMessage("My code repository is: https://github.com/saifalfalah/ketobot.\n\nMy code is licensed under the MIT license. Feel free to fork my repo. 🙌", message.channel);
             else rtm.sendMessage("Beep boop. I can't understand what you're saying. I'm only a dumb bot 🤖.\n\n*Type 'help' for a list of my commands.*\n\nPlease message 💌 the admins if you have any further questions. 🙌", message.channel);
     }
     // in case of message from Slackbot, we log it to the terminal.
